@@ -11,7 +11,7 @@ def deploy_and_create():
         sample_token_uri, {"from": account})
     tx.wait(1)
     print(
-        f"You can view your NFT at {OPEN_SEA_URL.format(simple_collectible.address, simple_collectible.tokenCounter() - 1)}")
+        f"You can view your NFT at {OPENSEA_URL.format(simple_collectible.address, simple_collectible.tokenCounter() - 1)}")
     return simple_collectible
 
 

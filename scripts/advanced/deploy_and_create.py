@@ -9,13 +9,13 @@ def deploy_and_create():
         get_contract("link_token"),
         config["networks"][network.show_active()]["keyhash"],
         config["networks"][network.show_active()]["fee"],
-        {"from": account},
+        {"from": account}
     )
     fund_with_link(advanced_collectible.address)
-    creating_tx = advanced_collectible.createCollectible({"from":account})
+    creating_tx = advanced_collectible.createCollectible({"from": account})
     creating_tx.wait(1)
     print("New token has been created!")
-    
+    return advanced_collectible, creating_tx
 
 
 def main():

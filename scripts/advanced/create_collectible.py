@@ -5,9 +5,10 @@ from web3 import Web3
 
 def main():
     account = get_account()
-    advacned_collectible = AdvancedCollectible[-1]
-    fund_with_link(advacned_collectible.address,
+    advanced_collectible = AdvancedCollectible[-1]
+    fund_with_link(advanced_collectible.address,
                    amount=Web3.toWei(0.1, "ether"))
-    create_tx = advacned_collectible.createCollectible({"from": account})
-    create_tx.wait(1)
-    print("Collectible creatred!")
+    creation_transaction = advanced_collectible.createCollectible({
+                                                                  "from": account})
+    creation_transaction.wait(1)
+    print("Collectible created!")
